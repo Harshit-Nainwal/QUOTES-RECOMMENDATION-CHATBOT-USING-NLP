@@ -1,0 +1,129 @@
+version: "3.1"
+
+stories:
+
+# Greeting
+- story: user greets chatbot
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+# Motivation Quote
+- story: user asks for motivation quote
+  steps:
+  - intent: motivation
+  - action: utter_motivation
+
+
+# Inspiration Quote
+- story: user asks for inspiration quote
+  steps:
+  - intent: inspiration
+  - action: utter_inspiration
+
+
+# Love Quote
+- story: user asks for love quote
+  steps:
+  - intent: love
+  - action: utter_love
+
+
+# Funny Quote
+- story: user asks for funny quote
+  steps:
+  - intent: funny
+  - action: utter_funny
+
+
+# Success Quote
+- story: user asks for success quote
+  steps:
+  - intent: success
+  - action: utter_success
+
+
+# Goodbye
+- story: user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+# Greeting then motivation
+- story: greet then motivation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: motivation
+  - action: utter_motivation
+
+
+# Greeting then inspiration
+- story: greet then inspiration
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inspiration
+  - action: utter_inspiration
+
+
+# Greeting then funny quote
+- story: greet then funny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: funny
+  - action: utter_funny
+
+
+# Greeting then love quote
+- story: greet then love
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: love
+  - action: utter_love
+
+
+# User likes quote
+- story: user feedback after quote
+  steps:
+  - intent: funny
+  - action: utter_funny
+  - intent: feedback
+  - action: utter_feedback
+
+
+# User confirms for more quotes
+- story: user affirmation after feedback
+  steps:
+  - intent: feedback
+  - action: utter_feedback
+  - intent: affirm
+  - action: utter_affirm
+
+
+# User asks for more quotes
+- story: user asks for more quotes
+  steps:
+  - intent: ask_more
+  - action: utter_ask_more
+
+
+# Full conversation example
+- story: full conversation flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: funny
+  - action: utter_funny
+  - intent: feedback
+  - action: utter_feedback
+  - intent: affirm
+  - action: utter_affirm
+  - intent: motivation
+  - action: utter_motivation
+  - intent: goodbye
+  - action: utter_goodbye

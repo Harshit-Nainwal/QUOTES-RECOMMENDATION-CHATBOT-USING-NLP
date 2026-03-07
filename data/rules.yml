@@ -1,0 +1,68 @@
+version: "3.1"
+
+rules:
+
+# -----------------------------
+# Greeting
+# -----------------------------
+- rule: respond to greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+# -----------------------------
+# Quote Category Responses
+# -----------------------------
+- rule: provide motivational quote
+  steps:
+  - intent: motivation
+  - action: utter_motivation
+
+- rule: provide inspirational quote
+  steps:
+  - intent: inspiration
+  - action: utter_inspiration
+
+- rule: provide love quote
+  steps:
+  - intent: love
+  - action: utter_love
+
+- rule: provide funny quote
+  steps:
+  - intent: funny
+  - action: utter_funny
+
+- rule: provide success quote
+  steps:
+  - intent: success
+  - action: utter_success
+
+
+# -----------------------------
+# Conversation Responses
+# -----------------------------
+- rule: respond to affirmation
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: respond to feedback
+  steps:
+  - intent: feedback
+  - action: utter_feedback
+
+- rule: user asks for more quotes
+  steps:
+  - intent: ask_more
+  - action: utter_ask_more
+
+
+# -----------------------------
+# Goodbye
+# -----------------------------
+- rule: respond to goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

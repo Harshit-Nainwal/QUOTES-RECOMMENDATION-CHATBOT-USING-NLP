@@ -1,0 +1,144 @@
+version: "3.1"
+
+nlu:
+
+# Greeting Intent
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good evening
+    - hello chatbot
+    - hi there
+    - hey bot
+    - greetings
+    - how are you
+    - hello assistant
+    - hey there
+
+# Motivation Quotes Intent
+- intent: motivation
+  examples: |
+    - give me a motivational quote
+    - I need motivation
+    - motivate me
+    - tell me something motivating
+    - I feel demotivated
+    - inspire me to work harder
+    - give me a quote for motivation
+    - I want motivation
+    - share a motivational quote
+    - tell me something inspiring for work
+    - I need some motivation today
+    - say something encouraging
+    - give me positive motivation
+    - motivate me for success
+
+# Inspiration Quotes Intent
+- intent: inspiration
+  examples: |
+    - give me an inspirational quote
+    - I need inspiration
+    - inspire me
+    - tell me something inspiring
+    - share an inspiring quote
+    - I want to feel inspired
+    - inspire me today
+    - give me an inspiring thought
+    - say something inspirational
+    - tell me a powerful quote
+    - share a quote that inspires
+    - give inspiration for life
+
+# Love Quotes Intent
+- intent: love
+  examples: |
+    - give me a love quote
+    - tell me something about love
+    - I want a romantic quote
+    - share a love quote
+    - tell me a quote about relationships
+    - say something romantic
+    - give me a romantic line
+    - tell me something sweet
+    - share a quote about true love
+    - give me a quote for my partner
+    - I want something romantic
+
+# Funny Quotes Intent
+- intent: funny
+  examples: |
+    - tell me a funny quote
+    - make me laugh
+    - say something funny
+    - I want a humorous quote
+    - tell me a joke quote
+    - share something funny
+    - give me a comedy quote
+    - tell me something humorous
+    - make my day funny
+    - share a funny line
+
+# Affirm Intent
+- intent: affirm
+  examples: |
+    - okay
+    - ok
+    - yes
+    - sure
+    - sounds good
+    - alright
+    - that's fine
+    - great
+
+# Success Quotes Intent
+- intent: success
+  examples: |
+    - give me a success quote
+    - tell me a quote about success
+    - how can I succeed
+    - share a success quote
+    - motivate me for success
+    - say something about achieving goals
+    - tell me a quote about achieving success
+    - give me advice about success
+    - I want a quote about winning
+    - share a quote about achieving dreams
+    - inspire me to succeed
+
+# Goodbye Intent
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - talk to you later
+    - bye bot
+    - catch you later
+    - thanks bye
+    - see you soon
+    - goodbye chatbot
+    - have a nice day
+
+# Feedback Intent
+- intent: feedback
+  examples: |
+    - good one
+    - nice
+    - that's funny
+    - that's good
+    - great quote
+    - loved it
+    - nice quote
+
+# Ask More Intent
+- intent: ask_more
+  examples: |
+    - tell me another
+    - share another quote
+    - give me one more
+    - another one please
+    - more quotes please
+    - tell me more

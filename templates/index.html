@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Inspiration | AI Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-wrapper">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="main-container">
+        <section id="landing" class="glass-card">
+            <div class="badge">AI-Powered Wisdom</div>
+            <h1 class="hero-title">Elevate Your <span class="gradient-text">Mindset</span></h1>
+            <p class="hero-subtitle">Your personal companion for motivation, clarity, and daily wisdom. Speak with our AI to find the perfect quote for your journey.</p>
+            
+            <button onclick="startChat()" class="btn-primary">
+                <span>START CONVERSATION</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </button>
+<br>
+            <div class="stats">
+                <div class="stat-item">✨ <span>Motivation</span></div>
+                <div class="stat-item">🚀 <span>Success</span></div>
+                <div class="stat-item">🌱 <span>Growth</span></div>
+            </div>
+        </section>
+
+        <section id="chat-container" class="glass-card chat-interface hidden">
+            <header class="chat-header">
+                <div class="bot-info">
+                    <div class="status-dot"></div>
+                    <h3>Inspiration Bot</h3>
+                </div>
+            </header>
+
+            <div id="chatbox" class="chat-messages">
+                <div class="bot-msg">Welcome! I'm here to inspire you. How are you feeling today?</div>
+            </div>
+
+            <div class="chat-input-wrapper">
+                <input type="text" id="msg" placeholder="Ask for a quote..." onkeypress="handleKey(event)">
+                <button onclick="send()" class="btn-send">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function startChat() {
+            const landing = document.getElementById("landing");
+            const chat = document.getElementById("chat-container");
+            
+            landing.style.transform = "scale(0.9) translateY(-20px)";
+            landing.style.opacity = "0";
+            
+            setTimeout(() => {
+                landing.classList.add("hidden");
+                chat.classList.remove("hidden");
+                chat.style.animation = "fadeInScale 0.5s forwards";
+            }, 300);
+        }
+
+        function handleKey(e) {
+            if (e.key === 'Enter') send();
+        }
+
+        function send() {
+            const input = document.getElementById("msg");
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatbox = document.getElementById("chatbox");
+            
+            // Add User Message
+            chatbox.innerHTML += `<div class="user-msg">${message}</div>`;
+            input.value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            // Fetch from your Flask app.py
+            fetch("/send_message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message })
+            })
+            .then(res => res.json())
+            .then(data => {
+                chatbox.innerHTML += `<div class="bot-msg">${data.reply}</div>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(() => {
+                chatbox.innerHTML += `<div class="bot-msg error">Sorry, I'm having trouble connecting right now.</div>`;
+            });
+        }
+    </script>
+</body>
+</html>
