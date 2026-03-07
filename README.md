@@ -192,7 +192,8 @@ The interface communicates with the Rasa backend using the **REST API**.
 ## Chat Interface
 
 ![Chat Interface](screenshots/chat.png)
-(screenshots/chat1.png)
+![Chat Interface](screenshots/chat1.png)
+
 
 ---
 
