@@ -248,7 +248,7 @@ This validates:
 
 **Harshit Nainwal**
 
-B.Tech Computer Science Engineering
+
 
 ---
 
