@@ -245,9 +245,13 @@ This validates:
 ---
 
 # 👨‍💻 Author
+Team Leader :
+**Utkarsh Kumar CSE(DS)**
 
-**Harshit Nainwal**
-
+Members:
+**Harshit Nainwal CSE(R)** |
+**Diksha Sirohi CSE(DS)** |
+**Vaibhav CSE(AI)**
 
 
 ---
